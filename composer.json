@@ -1,0 +1,29 @@
+{
+    "name": "ashimbadrie/lara-core",
+    "description": "Contains base classes as well as helper classes to fast track development.",
+    "authors": [
+        {
+            "name": "Ashim",
+            "email": "badrieashim@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AshimBadrie\\LaraCore\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AshimBadrie\\LaraCore\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AshimBadrie\\LaraCore\\LaraCoreServiceProvider"
+            ]
+        }
+    }
+}
