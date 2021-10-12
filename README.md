@@ -72,3 +72,29 @@ Route::patch('examples/{id}', 'ExampleController@update');
 Route::delete('examples/{id}', 'ExampleController@destroy');
 
 ```
+
+To have a paged list of records, we need the list manager and controller
+
+```php
+
+class ExampleListManager extends DataListManager
+{
+    public function __construct()
+    {
+        $model = "App\Models\Example";
+        parent::__construct($model);
+    }
+}
+
+class ExampleListController extends DataListController
+{
+    private $exampleListManager; 
+    
+    public function __construct()
+    {
+        $this->exampleListManager = new ExampleListManager();
+        parent::__construct($this->exampleListManager);
+    }
+}
+
+```
