@@ -98,3 +98,12 @@ class ExampleListController extends DataListController
 }
 
 ```
+
+Once we have our list data controller and manager we can now create our API resources to point to the listing logic. Inside the routes/api.php file, we add the following
+
+```php
+
+Route::post('examples/list', 'ExampleListController@page');
+Route::get('examples/list', 'ExampleListController@index');
+
+```
