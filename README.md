@@ -4,7 +4,7 @@ Quickly and easily create CRUD for Laravel API using these handy base classes.
 
 Pre-Requisites
 
-This package expects your database migrations to include the following required fields
+This package expects your database migrations to include the following required fields. By default, we turned off laravel's timestamp usage and opt-in for our custom create/update UNIX timestamp. We also added the ability to log who created/updated a record once authenticated.
 
 ```php
 
@@ -24,6 +24,11 @@ First you should create a model in your project extending the __BaseDataModel__ 
 class ExampleModel extends BaseDataModel {
 
   protected $table = 'example_table';
+  
+  protected function defaultLookupField(): String
+  {
+      return '';
+  }
   
 }
 
