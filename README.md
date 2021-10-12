@@ -61,3 +61,14 @@ class ExampleController extends DataController {
 }
 
 ```
+
+Once we have our model, data controller and manager we can now create our API resources to point to the CRUD logic. Inside the routes/api.php file, we add the following
+
+```php
+
+Route::get('examples/{id}', 'ExampleController@show');
+Route::post('examples', 'ExampleController@store');
+Route::patch('examples/{id}', 'ExampleController@update');
+Route::delete('examples/{id}', 'ExampleController@destroy');
+
+```
