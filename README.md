@@ -17,7 +17,7 @@ $table->integer('modified_on')->nullable()->comment('The date of modification in
 
 Basic Usage
 
-First you should create a model in your project extending the __BaseDataModel__ class.
+First you should create a model in your project extending the __BaseDataModel__ class. This model expects you to add a field name for the model's table to handle lookup/searching.
 
 ```php
 
@@ -28,6 +28,34 @@ class ExampleModel extends BaseDataModel {
   protected function defaultLookupField(): String
   {
       return '';
+  }
+  
+}
+
+```
+
+To handle basic REST API CRUD operations, we need to create a data manager and data controller that has basic business logic.
+
+```php
+
+class ExampleManager extends DataManager {
+
+  public function __construct()
+  {
+      $model = "App\Models\ExampleModel"; // Path to the ExampleModel we created above
+      parent::__construct($model);
+  }
+  
+}
+
+class ExampleController extends DataController {
+
+  private $exampleManager;
+
+  public function __construct()
+  {
+      $this->exampleManager = new ExampleManager();
+      parent::__construct($this->exampleManager);
   }
   
 }
