@@ -1,4 +1,4 @@
-# lara-core
+# LaraCore
 
 Quickly and easily create CRUD for Laravel API using these handy base classes.
 
