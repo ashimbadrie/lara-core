@@ -120,6 +120,19 @@ Route::get('examples/list', 'ExampleListController@index');
 
 ```
 
+The listing *post* request accepts an *application/json* payload as follows:
+
+```json
+
+{
+  "start": 0,
+  "limit": 0,
+  "sort_by": [],
+  "filter_by": []
+}
+
+```
+
 ## Add filters to listing
 
 TODO
