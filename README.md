@@ -72,7 +72,7 @@ class ExampleController extends DataController {
 
 ```
 
-Once we have our *data model*, *data controller* and *data manager* set up we can now create our API resources to point to the CRUD logic. Inside the routes/api.php file, we add the following
+Once we have our *data model*, *data controller* and *data manager* set up we can now create our API resources to point to the CRUD logic. Inside the **routes/api.php** file, we add the following:
 
 ```php
 
@@ -83,7 +83,9 @@ Route::delete('examples/{id}', 'ExampleController@destroy');
 
 ```
 
-To have a paged list of records, we need the list manager and controller
+## Paginated Record Listing
+
+In order to load a paginated list of records, we need to create a *list manager* and *list controller* as follows:
 
 ```php
 
@@ -109,7 +111,7 @@ class ExampleListController extends DataListController
 
 ```
 
-Once we have our list data controller and manager we can now create our API resources to point to the listing logic. Inside the routes/api.php file, we add the following
+Once we have our *data list controller* and *data list manager* we can now create our API resources to point to the listing logic. Inside the **routes/api.php** file, we add the following:
 
 ```php
 
@@ -117,3 +119,11 @@ Route::post('examples/list', 'ExampleListController@page');
 Route::get('examples/list', 'ExampleListController@index');
 
 ```
+
+## Add filters to listing
+
+TODO
+
+## Sort listing
+
+TODO
