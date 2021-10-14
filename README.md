@@ -120,15 +120,28 @@ Route::get('examples/list', 'ExampleListController@index');
 
 ```
 
-The listing *post* request accepts an *application/json* payload as follows:
+The listing *post* request accepts an *application/json* payload to load the first page as follows:
 
 ```json
 
 {
   "start": 0,
-  "limit": 0,
-  "sort_by": [],
-  "filter_by": []
+  "limit": 10,
+  "sort_by": {},
+  "filter_by": {}
+}
+
+```
+
+> NOTE: Your frontend will need to increment the start value in the payload above to cycle through a paginated list.
+
+A typical response looks as follows:
+
+```json
+
+{
+  "page": [],
+  "total": 0
 }
 
 ```
