@@ -4,6 +4,10 @@ Quickly and easily create CRUD for Laravel API using these handy base classes.
 
 ## Installation
 
+```bash
+composer require ashimbadrie/lara-core
+```
+
 ## Pre-Requisites
 
 This package expects your database migrations to include the following required fields. By default, we turned off laravel's timestamp usage and opt-in for our custom create/update UNIX timestamp. We also added the ability to log who created/updated a record once authenticated.
