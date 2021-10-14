@@ -1,4 +1,4 @@
-# LaraCore
+# Lara Core
 
 Quickly and easily create CRUD for Laravel API using these handy base classes.
 
@@ -42,7 +42,9 @@ class ExampleModel extends BaseModel {
 
 ```
 
-To handle basic REST API CRUD operations, we need to create a data manager and data controller that has basic business logic.
+## REST API CRUD
+
+To handle basic REST API CRUD operations, we need to create a *data manager* and *data controller* as follows:
 
 ```php
 
@@ -70,7 +72,7 @@ class ExampleController extends DataController {
 
 ```
 
-Once we have our model, data controller and manager we can now create our API resources to point to the CRUD logic. Inside the routes/api.php file, we add the following
+Once we have our *data model*, *data controller* and *data manager* set up we can now create our API resources to point to the CRUD logic. Inside the routes/api.php file, we add the following
 
 ```php
 
