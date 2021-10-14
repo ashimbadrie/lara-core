@@ -2,7 +2,9 @@
 
 Quickly and easily create CRUD for Laravel API using these handy base classes.
 
-Pre-Requisites
+## Installation
+
+## Pre-Requisites
 
 This package expects your database migrations to include the following required fields. By default, we turned off laravel's timestamp usage and opt-in for our custom create/update UNIX timestamp. We also added the ability to log who created/updated a record once authenticated.
 
@@ -15,13 +17,15 @@ $table->integer('modified_on')->nullable()->comment('The date of modification in
 
 ```
 
-Basic Usage
+## Creating a Data Model
 
-First you should create a model in your project extending the __BaseDataModel__ class. This model expects you to add a field name for the model's table to handle lookup/searching.
+A *data model* is the entrypoint to creating records in a database table. When a record is saved, the model tracks which *authenticated* user **creates/modifies** a record and also tracks the **UNIX timestamp** for these operations.
+
+Creating a data model is as simple as follows:
 
 ```php
 
-class ExampleModel extends BaseDataModel {
+class ExampleModel extends BaseModel {
 
   protected $table = 'example_table';
   
